@@ -21,7 +21,8 @@ $totalRows_testing = mysqli_num_rows($testing);
 <!-- <h1 class="mb-3 text-center">สื่อการเรียนรู้</h1>
   <hr> -->
   <ul class="list-group list-group-flush text-center">
-
+<br>
+              
     <?php if ($totalRows_choice > 0) {?>
       <?php do { ?>
 
@@ -42,11 +43,11 @@ $totalRows_testing = mysqli_num_rows($testing);
            <li class="list-group">
              <h3>
 
-              <img src="img/img47.jpg">
-              <br>
-              <br>
+              
+              
+             
 
-              <a href="choice.php?choice_id=<?php echo $row_choice['choice_id'];?>&user_id=<?php echo $_SESSION['UserID'];?>&aff=aff"><p class="btn btn-xs btn-danger buttonn" ><b>ทำแบบทดสอบก่อนเรียนแล้ว</b></p></a>
+              <a href="choice.php?choice_id=<?php echo $row_choice['choice_id'];?>&user_id=<?php echo $_SESSION['UserID'];?>&aff=aff"><p class="btn btn-xs btn-danger buttonn" ><b>ทำแบบทดสอบก่อนเรียน <?php echo $row_choice['choice_name'];?> แล้ว</b></p></a>
             </h3>
           </li>
 
@@ -54,11 +55,11 @@ $totalRows_testing = mysqli_num_rows($testing);
           <li class="list-group">
             <h3>
 
-              <img src="img/img47.jpg">
-              <br>
-              <br>
+              
+              
+             
 
-              <a href="watch.php?choice_id=<?php echo $row_choice['choice_id'];?>&user_id=<?php echo $_SESSION['UserID'];?>&aff=aff&cff"><p class="btn btn-xs btn-danger buttonn"><b>ทำแบบทดสอบแล้ว</b></p></a>
+              <a href="watch.php?choice_id=<?php echo $row_choice['choice_id'];?>&user_id=<?php echo $_SESSION['UserID'];?>&aff=aff&cff"><p class="btn btn-xs btn-danger buttonn"><b>ทำแบบทดสอบ <?php echo $row_choice['choice_name'];?> แล้ว</b></p></a>
             </h3>
           </li>
 
@@ -70,11 +71,11 @@ $totalRows_testing = mysqli_num_rows($testing);
        <li class="list-group">
         <h3>
 
-          <img src="img/img47.jpg">
-          <br>
-          <br>
+          
+          
+         
 
-          <a href="choice.php?choice_id=<?php echo $row_choice['choice_id'];?>&user_id=<?php echo $_SESSION['UserID'];?>&bff=bff" ><p class="btn btn-xs btn-danger buttonn" ><b>เข้าสู่บทเรียน</b></p></a>
+          <a href="choice.php?choice_id=<?php echo $row_choice['choice_id'];?>&user_id=<?php echo $_SESSION['UserID'];?>&bff=bff" ><p class="btn btn-xs btn-danger buttonn" ><b><?php echo $row_choice['choice_name'];?></b></p></a>
         </h3>
       </li>
     <?php } ?>

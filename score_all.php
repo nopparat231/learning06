@@ -47,6 +47,8 @@ $totalRows_learning = mysqli_num_rows($learning);
                   <tr class="text-center">
                     <th scope="col">วันที่</th>
                     <th scope="col">ชื่อ-นามสกุล</th>
+                    <th scope="col">แบบทดสอบ</th>
+                    
                     <th scope="col">คะแนนก่อนเรียน</th>
                     <th scope="col">คะแนนหลังเรียน</th>
                   </tr>
@@ -61,6 +63,7 @@ $totalRows_learning = mysqli_num_rows($learning);
                     <tr class="text-center">
                       <td><?php echo date("d/m/Y" , strtotime($row_learning['user_learning_date'])); ?></td>
                       <td><?php echo $row_learning['Firstname']. "  " .$row_learning['Lastname']; ?></td>
+                      <td><?php echo $row_learning['choice_name']; ?></td>
                       <td><?php echo $row_learning['user_learning_bf']; ?></td>
                       <td><?php echo $row_learning['user_learning_af']; ?></td>
                     </tr>
