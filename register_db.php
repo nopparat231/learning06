@@ -8,6 +8,7 @@
 
 <?php
 include('conn.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
+include 'PHPMailer/sent.php';
 	//สร้างตัวแปรเก็บค่าที่รับมาจากฟอร์ม
 $Firstname = $_REQUEST["Firstname"];
 $Lastname = $_REQUEST["Lastname"];
@@ -73,32 +74,40 @@ if ($numemail > 0 ){ ?>
 	//เพิ่มเข้าไปในฐานข้อมูล
       $d = date("Y-m-d");
       $user_date = date('Y-m-d', strtotime('+2 years', strtotime($d)));
-			$sql = "INSERT INTO user(Firstname, Lastname, Username, Password, email ,phone , Userlevel , user_date , session_id ,  Status)
-			VALUES('$Firstname', '$Lastname', '$Username', '$Password', '$email' , '$phone' , '$Userlevel'  , '$user_date', '$session_id', '$Status')";
+      $sql = "INSERT INTO user(Firstname, Lastname, Username, Password, email ,phone , Userlevel , user_date , session_id ,  Status)
+      VALUES('$Firstname', '$Lastname', '$Username', '$Password', '$email' , '$phone' , '$Userlevel'  , '$user_date', '$session_id', '$Status')";
 
-			$result1 = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
-			$ID = mysqli_insert_id($con) or die ("Error in query: $sql " . mysqli_error());
-			$ma = "https://digitalmarketing.shpjm.com/register_db_active.php?sid=".$session_id."&ID=".$ID."<br>";
-     $massage = "<h3> activate user account </h3><br>".$ma;
-   }
+      $result1 = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
+      $ID = mysqli_insert_id($con) or die ("Error in query: $sql " . mysqli_error());
+      $ma = "https://digitalmarketing.shpjm.com/register_db_active.php?sid=".$session_id."&ID=".$ID."<br>";
+      $massage = "<h3> activate user account </h3><br>".$ma;
+    }
 	//ปิดการเชื่อมต่อ database
-   mysqli_close($con);
+    mysqli_close($con);
 
 	//จาวาสคริปแสดงข้อความเมื่อบันทึกเสร็จและกระโดดกลับไปหน้าฟอร์ม
 
-   if($result1){
+    if($result1){
 
      ini_set( 'display_errors', 1 );
      error_reporting( E_ALL );
-     $from = "service@shpjm.com";
+     $from = "service@ccc.com";
      $to = $email;
-     $subject = "activate user account digitalmarketing.shpjm.com";
+     $subject = "activate user account ";
      $message = $massage;
      $headers = "From:" . $from . "\r\n";
      $headers .= "Content-Type: text/html; charset=utf-8\r\n";
-     $mailsend = mail($to,$subject,$message, $headers);
+     
+     $mail->CharSet = "utf-8";
+     $mail->setFrom($from);
+     $mail->addAddress($to);
+     $mail->Subject = $subject;
+     $mail->Body = $message;
 
-     if($mailsend){
+
+     //$mailsend = mail($to,$subject,$message, $headers);
+
+     if($mail->send()){
        ?>
 
        <script type="text/javascript">

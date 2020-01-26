@@ -9,25 +9,35 @@
   $email = $_POST['email'];
 
   include('conn.php');
+  include 'PHPMailer/sent.php';
+
+
   $checkemail = "SELECT * FROM user WHERE email = '$email'";
   $resultemail = mysqli_query($con,$checkemail);
   $objResult = mysqli_fetch_array($resultemail);
   $numemail = mysqli_num_rows($resultemail);
-  $massage = "<h2>สวัสดีคุณ : <b>".$objResult['Firstname']."</b></h2><br><h1> รหัสผ่านของคุณคือ : ".$objResult['Password']."</h1>";
+  $massage = "<h2>HELLO : <b>".$objResult['Firstname']."</b></h2><br><h1> Your Password : ".$objResult['Password']."</h1>";
   if ($numemail > 0 ){
 
 
-     ini_set( 'display_errors', 1 );
-    error_reporting( E_ALL );
-    $from = "service@digitalmarketing.shpjm.com";
-    $to = $email;
-    $subject = "รหัสผ่านสำหรับเว็บ digitalmarketing.shpjm.com";
-    $message = $massage;
-    $headers = "From:" . $from . "\r\n";
-    $headers .= "Content-Type: text/html; charset=utf-8\r\n";
-    $mailsend = mail($to,$subject,$message, $headers);
+   ini_set( 'display_errors', 1 );
+   error_reporting( E_ALL );
+   $from = "service@ccc.com";
+   $to = $email;
+   $subject = "Your Password";
+   $message = $massage;
+   $headers = "From:" . $from . "\r\n";
+   $headers .= "Content-Type: text/html; charset=utf-8\r\n";
+   
+   $mail->CharSet = "utf-8";
+   $mail->setFrom($from);
+   $mail->addAddress($to);
+   $mail->Subject = $subject;
+   $mail->Body = $message;
 
-    if($mailsend){
+     //$mailsend = mail($to,$subject,$message, $headers);
+
+   if($mail->send()){
      ?>
 
      <script type="text/javascript">
