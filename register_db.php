@@ -96,9 +96,10 @@ if ($numemail > 0 ){ ?>
      $subject = "activate user account ";
      $message = $massage;
      $headers = "From:" . $from . "\r\n";
-     $headers .= "Content-Type: text/html; charset=utf-8\r\n";
+
      
-     $mail->CharSet = "utf-8";
+     $mail->IsHTML(true);
+     $mail->CharSet = "text/html; charset=UTF-8;";
      $mail->setFrom($from);
      $mail->addAddress($to);
      $mail->Subject = $subject;
