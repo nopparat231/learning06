@@ -26,7 +26,7 @@ if (isset($_SESSION["UserID"])) {
 
   <div class="col-md-6"> <!-- ใส่วิดีโอตัวอย่าง -->
     <br><br>
-    <img src="img/index.png" align="center" width="100%" height="77%">
+    <img src="img/logonew.png" align="center" width="110%" height="77%">
     <br>
   </div>
 

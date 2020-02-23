@@ -79,7 +79,7 @@ if ($numemail > 0 ){ ?>
 
       $result1 = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
       $ID = mysqli_insert_id($con) or die ("Error in query: $sql " . mysqli_error());
-      $ma = "https://digitalmarketing.shpjm.com/register_db_active.php?sid=".$session_id."&ID=".$ID."<br>";
+      $ma = "http://learningforum.net/register_db_active.php?sid=".$session_id."&ID=".$ID."<br>";
       $massage = "<h3> activate user account </h3><br>".$ma;
     }
 	//ปิดการเชื่อมต่อ database

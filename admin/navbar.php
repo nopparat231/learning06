@@ -5,7 +5,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbar6"> 
     <a class="navbar-brand text-primary d-none d-md-block" href="index.php">
-    <img src="./img/logo.gif" alt="" width="100%">
+    <img src="./img/logonew3.png" alt="" width="80%" >
       <!-- <img src="../img/icon.png" width="25%" height="25%"> --><!-- <img src="../img/13.png" width="50"> -->
       <!-- <b> COMPUTER ATC</b> -->
       <!-- <img src="./img/logo.gif" alt="" width="100%"> -->

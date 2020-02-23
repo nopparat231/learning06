@@ -68,7 +68,7 @@ if(session_status() == PHP_SESSION_NONE){
 
 
           <div class="col-md-9" align="center">
-            <img src="../img/img47.jpg">
+            <img src="../img/logonew2.gif"width="110%" height="80%">
             <br>
             <br>
           </div>

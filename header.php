@@ -7,9 +7,9 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
 
-  <title>การสื่อสารการตลาดดิจิทัล</title>
+  <title>ทรัพย์สินทางอุตสากหรรม</title>
   <!-- <link rel="icon" href="./img/5.png" /> -->
-  <link rel="shortcut icon" href="./img/icon.png" />
+  <link rel="shortcut icon" href="./img/001-project.png" />
   <!-- <img src="../img/logo.gif"> -->
   <style type="text/css">
     body {

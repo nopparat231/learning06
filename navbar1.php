@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light" style="background: #FEAD97;">
+<nav class="navbar navbar-expand-md navbar-light" style="background: #cf9521;">
 	<div class="container"> 
 
 		<div class="collapse navbar-collapse" id="navbar6"> 

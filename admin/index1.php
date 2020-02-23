@@ -32,7 +32,7 @@ if(session_status() == PHP_SESSION_NONE){
       <?php else: ?>
 
         <div class="col-md-9" align="center">
-          <img src="img/img47.jpg">
+          <img src="img/">
           <br>
           <br>
         </div>

@@ -5,7 +5,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbar6"> 
     <a class="navbar-brand text-primary d-none d-md-block" href="#">      
-    <img src="./img/logo.gif" alt="" width="100%"> <!-- <b>  DIGITAL MARKETING COMMUNICATION</b>-->
+    <img src="./img/logonew3.png" alt="" width="80%" > <!-- <b>  DIGITAL MARKETING COMMUNICATION</b>-->
     </a>
     <ul class="navbar-nav mx-auto"></ul>
     <ul class="navbar-nav ">
