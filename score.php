@@ -20,7 +20,6 @@ $totalRows_learning = mysqli_num_rows($learning);
 
 
 
-
 <div class="container">
   <div class="row">
 
@@ -45,8 +44,8 @@ $totalRows_learning = mysqli_num_rows($learning);
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="table-responsive text-center">
-              <table class="table table-striped table-bordered">
+            <div class="table-responsive text-center" >
+              <table class="table table-striped table-bordered" id="example">
                <?php if ($totalRows_learning > 0) {?>
 
                 <thead>
@@ -113,4 +112,5 @@ $totalRows_learning = mysqli_num_rows($learning);
 </style>
 
 <?php include 'footer.php'; ?>
+<?php include 'datatables.php'; ?>
 </html>
